@@ -1,0 +1,13 @@
+/*-----------------
+Base
+-------------------*/
+@use'../abstracts/variables';
+
+*::selection{
+    background: variables.$green;
+    color: variables.$white;
+}
+
+img {
+    max-width: 100%;
+}
