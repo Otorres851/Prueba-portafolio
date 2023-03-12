@@ -22,13 +22,65 @@
 </head>
 <body>
     <!-- Sección del Menú  -->
-    <h1 class="title">Portafolio</h1>
+    <main class="main" id="home">
+        <header class="header" menu-header>
+            <div class="menu">
+                <div class="menu__logo">
+                    <a href="#home"><img src="./assets/img/logo.png" alt="Logo" class="menu__img"></a>
+                </div>
+                <nav>
+                    <ul class="menu__list">
+                        <li><a class="menu__list__item" href="#home">Inicio</a></li>
+                        <li><a class="menu__list__item" href="#about">Acerca de mí</a></li>
+                        <li><a class="menu__list__item" href="#pages">Hacer</a></li>
+                        <li><a class="menu__list__item" href="#skills">Habilidades</a></li>
+                        <li><a class="menu__list__item" href="#gallery">Galería</a></li>
+                        <li><a class="menu__list__item" href="#contact">Contactame</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a href="javascript:void(0);" class="toggler" menu-toggler>
+                <span class="toggler__span"></span>
+                <span class="toggler__span"></span>
+                <span class="toggler__span"></span>
+            </a>
+
+            <div class="sidemenu" menu-active>
+                <a href="javascript:void(0);" class="sidemenu__close" menu-close></a>
+                <nav>
+                    <ul class="sidemenu__list">
+                        <li><a class="sidemenu__list__item" href="#home">Inicio</a></li>
+                        <li><a class="sidemenu__list__item" href="#about">Acerca de mí</a></li>
+                        <li><a class="sidemenu__list__item" href="#pages">Hacer</a></li>
+                        <li><a class="sidemenu__list__item" href="#skills">Habilidades</a></li>
+                        <li><a class="sidemenu__list__item" href="#gallery">Galería</a></li>
+                        <li><a class="sidemenu__list__item" href="#contact">Contactame</a></li>
+                    </ul>
+                </nav>
+                <footer>
+                    <div class="sidemenu__social">
+                        <a href="https://twitter.com/torresoscar841" target="_blank" class="sidemenu__social__icon"><img src="images/twitter.png"></a>
+                        <a href="https://www.linkedin.com/in/otorres-38a6241a2/" target="_blank" class="sidemenu__social__icon"><img
+                                src="images/linkedin.png"></a>
+                        <a href="https://github.com/Otorres851" target="_blank" class="sidemenu__social__icon"><img src="images/github.png"></a>
+                        <a href="https://www.behance.net/oscarbotello" target="_blank" class="sidemenu__social__icon"><img
+                                src="images/behance.png"></a>
+                    </div>
+                    <p class="sidemenu__credit">2023 Oscar Torres, Junior Front End Web Developer.</p>
+                </footer>
+            </div>
+        </header>
+    </main>
 
 
 
 
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="./assets/js/script.js" type="module"></script>
 
-    <script src="./assets/js/validación.js"></script>
 </body>
 </html>

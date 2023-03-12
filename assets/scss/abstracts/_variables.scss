@@ -1,13 +1,22 @@
-/*-----------------
-Fonts
--------------------*/
-$font-poppins: 'Poppins', sans-serif;
-$font-Roboto: 'Roboto Condensed', sans-serif;
 
-/*-----------------
-Colors
--------------------*/
-$green:#61f7c7;
-$white:#ffff;
-$gradient:linear-gradient(90deg, $green);   
+:root{
+    /*-----------------
+    Fonts
+    -------------------*/
+    --font-poppins: 'Poppins', sans-serif;
+    --font-roboto: 'Roboto Condensed', sans-serif;
+
+    /*-----------------
+    Colors
+    -------------------*/
+    --greenA:#61f7c7;
+    --greenB:#24cdd5;
+    --white:#ffff;
+    --black:#222427;
+    --blackA:#212529;
+    --blackB: rgba(0, 0, 0, 0.35);
+    --gradientA:linear-gradient(90deg, var(--green));  
+    --gradientB:linear-gradient(80deg, rgb(21, 184, 102), rgb(66, 109, 64)); 
+}
+
 

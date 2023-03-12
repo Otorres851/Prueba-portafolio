@@ -1,13 +1,23 @@
+@use'../abstracts/variables';
+
 /*-----------------
 Base
 -------------------*/
-@use'../abstracts/variables';
-
 *::selection{
-    background: variables.$green;
-    color: variables.$white;
+    background: var(--green);
+    color: var(--white);
+}
+
+body{
+    font-family: var(--font-poppins);
+	background: var(--black);
+    height: 200vh;
 }
 
 img {
     max-width: 100%;
+}
+
+a:link, a:visited {
+	text-decoration: none;
 }

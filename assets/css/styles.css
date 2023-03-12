@@ -1,19 +1,43 @@
-/*-----------------
-Fonts
--------------------*/
-/*-----------------
-Colors
--------------------*/
+@charset "UTF-8";
+:root {
+  /*-----------------
+  Fonts
+  -------------------*/
+  --font-poppins: "Poppins", sans-serif;
+  --font-roboto: "Roboto Condensed", sans-serif;
+  /*-----------------
+  Colors
+  -------------------*/
+  --greenA:#61f7c7;
+  --greenB:#24cdd5;
+  --white:#ffff;
+  --black:#222427;
+  --blackA:#212529;
+  --blackB: rgba(0, 0, 0, 0.35);
+  --gradientA:linear-gradient(90deg, var(--green));
+  --gradientB:linear-gradient(80deg, rgb(21, 184, 102), rgb(66, 109, 64));
+}
+
 /*-----------------
 Base
 -------------------*/
 *::selection {
-  background: #61f7c7;
-  color: white;
+  background: var(--green);
+  color: var(--white);
+}
+
+body {
+  font-family: var(--font-poppins);
+  background: var(--black);
+  height: 200vh;
 }
 
 img {
   max-width: 100%;
+}
+
+a:link, a:visited {
+  text-decoration: none;
 }
 
 /*-----------------
@@ -40,7 +64,9 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
+/*-----------------
+ HTML5 display-role reset for older browsers 
+ ---------------*/
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -75,10 +101,152 @@ a {
 }
 
 /*-----------------
+Sección del Menú
+-------------------*/
+.header {
+  position: relative;
+  transition: all 0.7s;
+  z-index: 9;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 100%;
+  padding: 0 5rem;
+}
+.menu__sticky {
+  width: 100%;
+  position: fixed;
+  background-color: var(--blackA);
+  box-shadow: 0 0.9rem 0.9rem -0.9rem var(--blackB);
+}
+.menu__logo {
+  margin: 0;
+  padding: 1rem 0;
+}
+.menu__img {
+  display: block;
+  width: 12rem;
+}
+.menu__list {
+  display: flex;
+}
+.menu__list__item {
+  padding: 0.6rem;
+  font-size: 1rem;
+  font-family: var(--font-roboto);
+  margin-top: 0.5rem;
+  color: var(--white);
+  display: block;
+  text-transform: uppercase;
+}
+.menu__list__item:hover {
+  color: var(--greenB);
+}
+
+.toggler {
+  position: absolute;
+  width: 1.8rem;
+  top: 1.5rem;
+  right: 2.5rem;
+}
+.toggler__span {
+  display: block;
+  background-color: var(--white);
+  height: 0.2rem;
+}
+.toggler__span:nth-child(2) {
+  margin: 0.3rem 0 0.3rem auto;
+  width: 75%;
+  transition: 0.3s all;
+}
+.toggler__span:nth-child(3) {
+  margin-left: auto;
+  width: 50%;
+  transition: 0.6s all;
+}
+.toggler:hover > .toggler__span:nth-child(2), .toggler:hover > .toggler__span:nth-child(3) {
+  width: 100%;
+}
+
+.sidemenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--gradientB);
+  width: 40%;
+  height: 100vh;
+  z-index: 999;
+  padding: 4rem;
+  color: var(--white);
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+.sidemenu__active {
+  transform: translate3d(0, 0, 0);
+}
+.sidemenu__close {
+  height: 2rem;
+  width: 2rem;
+  display: block;
+  position: absolute;
+  right: 1.3rem;
+  top: 1.5rem;
+}
+.sidemenu__close::before, .sidemenu__close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.7rem;
+  height: 1.8rem;
+  width: 0.2rem;
+  background: var(--white);
+}
+.sidemenu__close::before {
+  transform: rotate(45deg);
+}
+.sidemenu__close::after {
+  transform: rotate(-45deg);
+}
+.sidemenu__list {
+  padding-top: 1.9rem;
+}
+.sidemenu__list__item {
+  padding-top: 1rem 0;
+  font-size: 1.3rem;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.sidemenu__social {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.sidemenu__social__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  transition: all 0.3s linear;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+}
+
+/*-----------------
 @use Abstracts
 -------------------*/
 /*-----------------
 @use Base
+-------------------*/
+/*-----------------
+@use Components
 -------------------*/
 
 /*# sourceMappingURL=styles.css.map */

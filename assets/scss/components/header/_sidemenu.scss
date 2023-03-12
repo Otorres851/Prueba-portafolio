@@ -1,0 +1,77 @@
+@use'../../abstracts/variables';
+
+.sidemenu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--gradientB); 
+    width: 40%;
+    height: 100vh;
+    z-index: 999;
+    padding: 4rem;
+    color: var(--white);
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+
+    &__active{
+        transform: translate3d(0,0,0);
+    }
+
+    &__close{
+        height: 2rem;
+        width: 2rem;
+        display: block;
+        position: absolute;
+        right: 1.3rem;
+        top: 1.5rem;
+    }
+
+    &__close::before, &__close::after{
+        content: "";
+        position:absolute;
+        top: 0;
+        left: .7rem;
+        height: 1.8rem;
+        width: .2rem;
+        background: var(--white);
+    }
+
+    &__close::before{
+        transform: rotate(45deg)
+    }
+
+    &__close::after{
+        transform: rotate(-45deg)
+    }
+
+    &__list{
+        padding-top: 1.9rem;
+    }
+
+    &__list__item{
+        padding-top: 1rem 0;
+        font-size: 1.3rem;
+        color: var(--white);
+        text-transform: uppercase;
+    }
+
+    &__social{
+        display: flex;
+        align-items: center;
+        margin-bottom: .6rem;
+    }
+
+    &__social__icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.9rem;
+        height: 1.9rem;
+        border-radius: 50%;
+        transition: all 0.3s linear;
+        margin-right: .5rem;
+        text-transform: uppercase;
+    }
+
+}

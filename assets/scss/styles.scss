@@ -8,3 +8,11 @@
 -------------------*/
 @use '../scss/base/base';
 @use '../scss/base/reset';
+
+/*-----------------
+@use Components
+-------------------*/
+@use '../scss/components/header/header';
+@use '../scss/components/header/menu';
+@use '../scss/components/header/toggler';
+@use '../scss/components/header/sidemenu';
