@@ -1,0 +1,112 @@
+@use'../../abstracts/variables';
+
+#checkbox {
+    opacity: 0;
+    position: absolute;
+
+    &:checked ~ .mode__label .mode__ball{
+        transform: translateX(24px);
+    }
+}
+
+.mode{
+    &__label{
+        width: 3rem;
+        height: 1.6rem;
+        background-color: var(--black);
+        border-radius: 3rem;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__ball{
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: var(--white);
+        position: absolute;
+        top: .2rem;
+        left: .2rem;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+
+    &__dark{
+        background-color: var(--black);
+    }
+
+    &__dark .menu__text{
+        color: var(--white);
+    }
+    
+    &__dark .sidemenu{
+        background: var(--black); 
+    }
+
+    &__dark .sidemenu__active{
+        background: var(--black); 
+    }
+
+    &__dark .menu__list__item{
+        color: var(--white);
+    }
+
+    &__dark .menu__list__item:hover{
+        color: var(--greenB);
+    }
+
+    &__dark .sidemenu__list__item{
+        color: var(--white);
+    }
+
+    &__dark .sidemenu__list__item:hover{
+        color: var(--greenB);
+    }
+
+    &__dark .toggler__span{
+        background-color: var(--white);
+    }
+
+    &__dark &__label{
+        background-color: var(--white);
+    }
+
+    &__dark &__ball{
+        background-color: var(--black);
+    }
+
+}
+
+.modeside{
+    &__label{
+        width: 1.2rem;
+        height: 1.2rem;
+        background-color: var(--black);
+        border-radius: 3rem;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    &__ball{
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--white);
+        position: absolute;
+        top: 0.21rem;
+        left: 0.22rem;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+
+    &__dark &__label{
+        background-color: var(--white);
+    }
+
+    &__dark &__ball{
+        background-color: var(--black);
+    }
+}

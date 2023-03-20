@@ -5,7 +5,7 @@
     top: 0;
     right: 0;
     background: var(--gradientB); 
-    width: 40%;
+    width: 100%;
     height: 100vh;
     z-index: 999;
     padding: 4rem;
@@ -38,11 +38,11 @@
     }
 
     &__close::before{
-        transform: rotate(45deg)
+        transform: rotate(45deg);
     }
 
     &__close::after{
-        transform: rotate(-45deg)
+        transform: rotate(-45deg);
     }
 
     &__list{
@@ -50,10 +50,13 @@
     }
 
     &__list__item{
-        padding-top: 1rem 0;
         font-size: 1.3rem;
         color: var(--white);
         text-transform: uppercase;
+    }
+
+    &__list__item:hover{
+        color: var(--greenB);
     }
 
     &__social{

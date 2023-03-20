@@ -10,8 +10,9 @@ Base
 
 body{
     font-family: var(--font-poppins);
-	background: var(--black);
-    height: 200vh;
+    background-color: var(--white);
+    transition: background 0.2s linear;
+    height: 120vh;
 }
 
 img {

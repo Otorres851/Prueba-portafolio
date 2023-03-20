@@ -4,7 +4,7 @@
   Fonts
   -------------------*/
   --font-poppins: "Poppins", sans-serif;
-  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-Oswald: "Oswald", sans-serif;
   /*-----------------
   Colors
   -------------------*/
@@ -28,7 +28,8 @@ Base
 
 body {
   font-family: var(--font-poppins);
-  background: var(--black);
+  background-color: var(--white);
+  transition: background 0.2s linear;
   height: 200vh;
 }
 
@@ -116,7 +117,6 @@ Sección del Menú
   justify-content: space-between;
   margin: auto;
   max-width: 100%;
-  padding: 0 5rem;
 }
 .menu__sticky {
   width: 100%;
@@ -124,39 +124,79 @@ Sección del Menú
   background-color: var(--blackA);
   box-shadow: 0 0.9rem 0.9rem -0.9rem var(--blackB);
 }
+.menu__side {
+  width: 100%;
+  position: fixed;
+  background-color: transparent;
+  box-shadow: 0 0.9rem 0.9rem -0.9rem var(--blackB);
+}
 .menu__logo {
   margin: 0;
   padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
 }
-.menu__img {
-  display: block;
-  width: 12rem;
+.menu__text {
+  margin: 0.3rem;
+  line-height: 1rem;
+  margin: 0.3rem;
+  font-size: 0.8rem;
 }
 .menu__list {
   display: flex;
+  align-items: center;
 }
 .menu__list__item {
   padding: 0.6rem;
   font-size: 1rem;
-  font-family: var(--font-roboto);
-  margin-top: 0.5rem;
-  color: var(--white);
+  font-family: var(--font-Oswald);
+  color: var(--blackA);
   display: block;
   text-transform: uppercase;
+  font-weight: 500;
 }
 .menu__list__item:hover {
   color: var(--greenB);
 }
 
+@media screen and (min-width: 0) {
+  .menu {
+    padding: 0 1.5rem;
+  }
+  .menu__logo {
+    position: relative;
+  }
+  .menu__list {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    flex-direction: column;
+    padding: 0 3.5rem;
+  }
+  .menu__list {
+    display: flex;
+  }
+}
+@media screen and (min-width: 900px) {
+  .menu {
+    flex-direction: row;
+  }
+}
 .toggler {
   position: absolute;
   width: 1.8rem;
-  top: 1.5rem;
+  top: 1.3rem;
   right: 2.5rem;
 }
 .toggler__span {
   display: block;
-  background-color: var(--white);
+  background-color: var(--blackA);
   height: 0.2rem;
 }
 .toggler__span:nth-child(2) {
@@ -173,12 +213,17 @@ Sección del Menú
   width: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .toggler {
+    display: none;
+  }
+}
 .sidemenu {
   position: fixed;
   top: 0;
   right: 0;
   background: var(--gradientB);
-  width: 40%;
+  width: 100%;
   height: 100vh;
   z-index: 999;
   padding: 4rem;
@@ -217,10 +262,12 @@ Sección del Menú
   padding-top: 1.9rem;
 }
 .sidemenu__list__item {
-  padding-top: 1rem 0;
   font-size: 1.3rem;
   color: var(--white);
   text-transform: uppercase;
+}
+.sidemenu__list__item:hover {
+  color: var(--greenB);
 }
 .sidemenu__social {
   display: flex;
@@ -237,6 +284,96 @@ Sección del Menú
   transition: all 0.3s linear;
   margin-right: 0.5rem;
   text-transform: uppercase;
+}
+
+#checkbox {
+  opacity: 0;
+  position: absolute;
+}
+#checkbox:checked ~ .mode__label .mode__ball {
+  transform: translateX(24px);
+}
+
+.mode__label {
+  width: 3rem;
+  height: 1.6rem;
+  background-color: var(--black);
+  border-radius: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+.mode__ball {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--white);
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.mode__dark {
+  background-color: var(--black);
+}
+.mode__dark .menu__text {
+  color: var(--white);
+}
+.mode__dark .sidemenu {
+  background: var(--black);
+}
+.mode__dark .sidemenu__active {
+  background: var(--black);
+}
+.mode__dark .menu__list__item {
+  color: var(--white);
+}
+.mode__dark .menu__list__item:hover {
+  color: var(--greenB);
+}
+.mode__dark .sidemenu__list__item {
+  color: var(--white);
+}
+.mode__dark .sidemenu__list__item:hover {
+  color: var(--greenB);
+}
+.mode__dark .toggler__span {
+  background-color: var(--white);
+}
+.mode__dark .mode__label {
+  background-color: var(--white);
+}
+.mode__dark .mode__ball {
+  background-color: var(--black);
+}
+
+.modeside__label {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--black);
+  border-radius: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+.modeside__ball {
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: var(--white);
+  position: absolute;
+  top: 0.21rem;
+  left: 0.22rem;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.modeside__dark .modeside__label {
+  background-color: var(--white);
+}
+.modeside__dark .modeside__ball {
+  background-color: var(--black);
 }
 
 /*-----------------
