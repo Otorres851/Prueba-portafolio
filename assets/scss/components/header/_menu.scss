@@ -8,7 +8,6 @@
     margin: auto;
     max-width: 100%;
     
-    
     &__sticky{
         width: 100%;
         position: fixed;
@@ -74,13 +73,14 @@
         &__list{
             display: none;
         }
+
     }
 }
 
 @media screen and (min-width:768px) {
     .menu{
         flex-direction: column;
-        padding: 0 3.5rem;
+        padding: 0 4rem;
 
         &__list{
             display: flex;

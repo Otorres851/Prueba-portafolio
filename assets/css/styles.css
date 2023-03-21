@@ -177,7 +177,7 @@ Sección del Menú
 @media screen and (min-width: 768px) {
   .menu {
     flex-direction: column;
-    padding: 0 3.5rem;
+    padding: 0 4rem;
   }
   .menu__list {
     display: flex;
